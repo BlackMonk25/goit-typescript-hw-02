@@ -1,13 +1,6 @@
 import css from './ImageCard.module.css'
+import { Photo } from '../../types/photo';
 
-type Photo = {
-    id: number;
-    urls: {
-        regular: string;
-        small: string;
-    };
-        description?: string;
-}
 
 
 type PhotoProps = {

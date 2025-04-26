@@ -1,16 +1,9 @@
 import axios from 'axios'
+import { Photo } from './types/photo';
 
 const key = 'pwrvRKN0wakqlu-l3I8PUgYcHAPBjzENYgyQdtIGexs';
 
 axios.defaults.baseURL = `https://api.unsplash.com`;
-
-type Photo = {
-    id: number;
-    urls: {
-        small: string;
-    };
-    description: string;
-};
 
 type Response = {
     results: Photo[];

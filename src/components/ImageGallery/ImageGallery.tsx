@@ -1,14 +1,7 @@
 import ImageCard from "./ImageCard/ImageCard";
 import css from './ImageGallery.module.css'
 import { FC } from 'react';
-type Photo = {
-    id: number;
-    urls: {
-        regular: string;
-        small: string;
-    };
-        description?: string;
-}
+import { Photo } from '../types/photo';
 interface PhotosProps {
     photos: Photo[];
     onImageClick: (src: string) => void;

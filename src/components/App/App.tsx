@@ -7,15 +7,9 @@ import ImageModal from '../ImageModal/ImageModal.tsx'
 import Loader from '../Loader/Loader.tsx'
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn.tsx'
 import SearchBar from '../SearchBar/SearchBar.tsx'
+import { Photo } from '../types/photo'; 
 
-type Photo = {
-  id: number;
-  urls: {
-      regular: string;
-      small: string;
-  };
-      description?: string;
-}
+
 
 function App() {
   const [gallery, setGallery] = useState<Photo[]>([]);
@@ -44,7 +38,7 @@ function App() {
     try {
       setLoading(true);
       const nextPage = page + 1;
-      const data = await fetchPhotos(search, nextPage) as Photo[];
+      const data = await fetchPhotos(search, nextPage);
       setGallery((prevGallery) => [...prevGallery, ...data]);
       setPage(nextPage);
     } catch (error) {
